@@ -1,0 +1,20 @@
+- type: entity
+  id: LockerMechChassis
+  parent: BaseMechPart
+  name: шкафомех шасси
+  description: Незавершенная конструкция шкафомеха.
+  components:
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      battery-container: !type:Container
+  - type: MechAssemblyVisuals
+    statePrefix: state
+  - type: Sprite
+    noRot: true
+    sprite: /Textures/_Lust/Objects/Specific/Mech/lockermech_construction.rsi
+    state: state0
+  - type: Construction
+    graph: LockerMech
+    node: start
+    defaultTarget: lockermech
