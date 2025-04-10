@@ -17,7 +17,8 @@
       "name": "lockermech-broken"
     },
     {
-      "name": "lockermech-construction"
+      "name": "lockermech-nobattery",
+      "directions": 4
     }
   ]
 }

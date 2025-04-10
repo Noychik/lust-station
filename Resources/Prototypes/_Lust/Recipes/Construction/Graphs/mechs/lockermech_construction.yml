@@ -15,7 +15,7 @@
           key: "enum.MechAssemblyVisuals.State"
           data: 1
 
-      # 2) Установка ящиков и фонарика - 2 аварийных ящика, 1 ящик электрооборудования, фонарик. Занимает 10 секунды
+      # 2) Установка ящиков и фонарика - 2 ящика, фонарик. Занимает 10 секунд
       - tag: Toolbox
         name: аварийный ящик
         icon:
@@ -78,7 +78,7 @@
           data: 5
 
       # 6) Установка баллона - 1 кислородный баллон. Занимает 4 секунды
-      - tag: OxygenTank
+      - tag: GasTank
         name: кислородный баллон
         icon:
           sprite: "Objects/Tanks/jetpack.rsi"
@@ -89,9 +89,10 @@
           key: "enum.MechAssemblyVisuals.State"
           data: 6
 
-      # 7) Установка конвеера - 1 конвеер. Занимает 7 секунд
-      - tag: ConveyorBeltAssembly
-        name: конвейерная лента
+      # 7) Установка гусениц. Занимает 7 секунд
+      - material: Steel
+        amount: 5
+        name: гусеницы
         icon:
           sprite: "Structures/conveyor.rsi"
           state: "conveyor_loose"
@@ -124,35 +125,16 @@
 
       # 10) Установка электрооборудования - 3 конденсатора, 2 манипулятора. Занимает 3 секунды.
       - tag: CapacitorStockPart
-        name: конденсатор
+        name: конденсаторы
+        amount: 3
         icon:
           sprite: "Objects/Specific/Mech/mech_parts.rsi"
           state: "capacitor"
-        doAfter: 1
-
-      - tag: CapacitorStockPart
-        name: второй конденсатор
-        icon:
-          sprite: "Objects/Specific/Mech/mech_parts.rsi"
-          state: "capacitor"
-        doAfter: 1
-
-      - tag: CapacitorStockPart
-        name: третий конденсатор
-        icon:
-          sprite: "Objects/Specific/Mech/mech_parts.rsi"
-          state: "capacitor"
-        doAfter: 0.5
+        doAfter: 3
 
       - tag: MicroManipulatorStockPart
-        name: манипулятор
-        icon:
-          sprite: "Objects/Specific/Mech/mech_parts.rsi"
-          state: "manipulator"
-        doAfter: 0.25
-
-      - tag: MicroManipulatorStockPart
-        name: второй манипулятор
+        name: манипуляторы
+        amount: 2
         icon:
           sprite: "Objects/Specific/Mech/mech_parts.rsi"
           state: "manipulator"

@@ -1,0 +1,12 @@
+- type: construction
+  id: LockerMechFromCloset
+  name: Шасси шкафомеха
+  description: Незавершенная конструкция шкафомеха.
+  graph: LockerMechChassisConstrustion
+  startNode: start
+  targetNode: chassis
+  category: Разное
+  icon:
+    sprite: /Textures/_Lust/Objects/Specific/Mech/lockermech_construction.rsi
+    state: state0
+  objectType: Structure
