@@ -16,28 +16,28 @@
           data: 1
 
       # 2) Установка ящиков и фонарика - 2 аварийных ящика, 1 ящик электрооборудования, фонарик. Занимает 10 секунды
-      - tag: BoxSurvival
+      - tag: Toolbox
         name: аварийный ящик
         icon:
-          sprite: "Objects/Specific/Syndicate/syndicate_box.rsi"
-          state: "box"
+          sprite: "Objects/Tools/Toolboxes/toolbox_red.rsi"
+          state: "icon"
         doAfter: 3
 
-      - tag: BoxSurvival
+      - tag: Toolbox
         name: второй аварийный ящик
         icon:
-          sprite: "Objects/Specific/Syndicate/syndicate_box.rsi"
-          state: "box"
+          sprite: "Objects/Tools/Toolboxes/toolbox_red.rsi"
+          state: "icon"
         doAfter: 3
 
-      - tag: BoxMaterialElectronics
-        name: ящик электрооборудования
+      - tag: Toolbox
+        name: электрический тулбокс
         icon:
-          sprite: "Objects/Storage/boxes.rsi"
-          state: "box_elec"
+          sprite: "Objects/Tools/Toolboxes/toolbox_yellow.rsi"
+          state: "icon"
         doAfter: 2
 
-      - tag: FlashlightLantern
+      - tag: Flashlight
         name: фонарик
         icon:
           sprite: "Objects/Tools/flashlight.rsi"
@@ -111,7 +111,7 @@
           data: 8
 
       # 9) Установка микросхемы шлюза - 1 микросхема шлюза. Занимает 3 секунды.
-      - tag: AirlockElectronics
+      - tag: DoorElectronics
         name: микросхема шлюза
         icon:
           sprite: "Objects/Misc/module.rsi"
