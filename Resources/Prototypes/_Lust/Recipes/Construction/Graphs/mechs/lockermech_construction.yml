@@ -7,13 +7,13 @@
     - to: lockermech
       steps:
       # 1) Создание корпуса (шкафа) - 4 стали. Занимает 2 секунды
-      - material: Steel
-        amount: 4
-        doAfter: 2
-        completed:
-        - !type:VisualizerDataInt
-          key: "enum.MechAssemblyVisuals.State"
-          data: 1
+#      - material: Steel
+#        amount: 4
+#        doAfter: 2
+#        completed:
+#        - !type:VisualizerDataInt
+#          key: "enum.MechAssemblyVisuals.State"
+#          data: 1
 
       # 2) Установка ящиков и фонарика - 2 ящика, фонарик. Занимает 10 секунд
       - tag: Toolbox
