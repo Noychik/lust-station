@@ -1,8 +1,8 @@
 - type: entity
   id: MechLocker
   parent: [ BaseMech, IndustrialMech, BaseCargoContraband ]
-  name: Locker Mech
-  description: Медленный, но герметичный мех на основе Ripley. Идеально подходит для работы в космосе.
+  name: LockerMech
+  description: Медленный, но герметичный мех. Собран из мусора.
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -22,12 +22,13 @@
     brokenState: lockermech-broken
     mechToPilotDamageMultiplier: 0.50
     airtight: true
+    maxEquipmentAmount: 2
     pilotWhitelist:
       components:
         - HumanoidAppearance
-    pilotBlacklist:
-      species:
-      - Felinid
+#    pilotBlacklist:
+#      species:
+#      - Felinid
     openStateDirections: 4
     brokenStateDirections: 1
   - type: MeleeWeapon
@@ -37,8 +38,8 @@
       types:
         Blunt: 14
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1.25
-    baseSprintSpeed: 1.9
+    baseWalkSpeed: 1
+    baseSprintSpeed: 1.5
   - type: Reflect
     reflectProb: 0.15
     spread: 180
