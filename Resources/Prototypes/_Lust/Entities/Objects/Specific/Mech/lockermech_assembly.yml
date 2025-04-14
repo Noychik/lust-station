@@ -1,7 +1,7 @@
 - type: entity
   id: LockerMechChassis
   parent: BaseMechPart
-  name: шкафомех шасси
+  name: Корпус шкафомеха
   description: Незавершенная конструкция шкафомеха.
   components:
   - type: Appearance
