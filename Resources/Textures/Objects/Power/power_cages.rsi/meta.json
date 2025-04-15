@@ -26,6 +26,9 @@
             "name": "nanotrasen"
         },
         {
+            "name": "makeshift"
+        },
+        {
             "name": "inhand-left",
             "directions": 4
         },

@@ -215,7 +215,7 @@
   graph: LockerMechConstruction
   startNode: start
   targetNode: lockermech
-  category: construction-category-machines
+  category: construction-category-misc
   icon:
     sprite: /Textures/_Lust/Objects/Specific/Mech/lockermech.rsi
     state: lockermech
