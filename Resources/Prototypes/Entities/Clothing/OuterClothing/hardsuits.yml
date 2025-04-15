@@ -279,9 +279,10 @@
         Heat: 0.7 #sunrise-Edit
         Caustic: 0.65 #sunrise-Edit
         Radiation: 0.55  #sunrise-add
+    staminaModifier: 0.7 #Sunrise-edit
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.80
+    sprintModifier: 0.80
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurity
@@ -338,6 +339,7 @@
         Heat: 0.65 #sunrise-edit
         Caustic: 0.6
         Radiation: 0.5  #sunrise-Edit
+    staminaModifier: 0.5 #Sunrise-edit
   - type: ClothingSpeedModifier
     walkModifier: 0.7
     sprintModifier: 0.7
@@ -506,6 +508,7 @@
         Heat: 0.65 #sunrise-Edit
         Radiation: 0.5
         Caustic: 0.6
+    staminaModifier: 0.5 #Sunrise-edit
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
@@ -564,6 +567,8 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
+  #- type: StaminaResistance
+  #  damageCoefficient: 0.75
   - type: Armor
     modifiers:
       coefficients:
@@ -573,6 +578,8 @@
         Heat: 0.5
         Radiation: 0.5
         Caustic: 0.5
+    staminaModifier: 0.3 #Sunrise-edit
+    ingoreKnockdown: true #Sunrise-Edit
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
@@ -608,7 +615,7 @@
   parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband]
   id: ClothingOuterHardsuitSyndieElite
   name: syndicate elite hardsuit
-  description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
+  description: An elite version of the blood-red hardsuit, with improved radiation resistance and fireproofing. Property of Gorlex Marauders.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
@@ -624,15 +631,19 @@
     damageCoefficient: 0.2
   - type: FireProtection
     reduction: 0.8
+  #- type: StaminaResistance
+  #  damageCoefficient: 0.6
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.55 #Sunrise-edit
-        Slash: 0.55 #Sunrise-edit
-        Piercing: 0.55 #Sunrise-edit
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
         Heat: 0.2
         Radiation: 0.01
         Caustic: 0.5
+    staminaModifier: 0.3 # Sunrise-Edit
+    ingoreKnockdown: true #Sunrise-Edit
   - type: Item
     size: Huge
   - type: ClothingSpeedModifier
@@ -682,6 +693,8 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
+  #- type: StaminaResistance
+  #  damageCoefficient: 0.6
   - type: Armor
     modifiers:
       coefficients:
@@ -691,9 +704,11 @@
         Heat: 0.5
         Radiation: 0.25
         Caustic: 0.4
+    staminaModifier: 0.3 # Sunrise-Edit
+    ingoreKnockdown: true #Sunrise-Edit
   - type: ClothingSpeedModifier
-    walkModifier: 1.0
-    sprintModifier: 1.0
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieCommander
@@ -714,6 +729,8 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.3
+  #- type: StaminaResistance # Should not have stamina resistance, this is purely so people know it was not forgotten.
+  #  damageCoefficient: 0.99
   - type: Armor
     modifiers:
       coefficients:
@@ -723,6 +740,8 @@
         Heat: 0.2
         Radiation: 0.2
         Caustic: 0.2
+    staminaModifier: 0.0 #Sunrise-edit
+    ingoreKnockdown: true #Sunrise-Edit
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.65
@@ -755,6 +774,7 @@
         Heat: 0.25
         Radiation: 0.25
         Caustic: 0.75
+    staminaModifier: 0.3 #Sunrise-edit
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
@@ -967,6 +987,8 @@
     damageCoefficient: 0.2
   - type: FireProtection
     reduction: 0.8
+  - type: StaminaResistance
+    damageCoefficient: 0.15 # Needs 21 hits with a disabler to stun :godo:
   - type: Armor
     modifiers:
       coefficients:
@@ -976,6 +998,8 @@
         Heat: 0.1
         Radiation: 0.1
         Caustic: 0.1
+    staminaModifier: 0.0 #Sunrise-edit
+    ingoreKnockdown: true #Sunrise-Edit
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
@@ -1013,6 +1037,8 @@
         Shock: 0.1
         Radiation: 0.1
         Caustic: 0.1
+    staminaModifier: 0.3 #Sunrise-edit
+    ingoreKnockdown: true #Sunrise-Edit
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0

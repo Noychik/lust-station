@@ -203,8 +203,14 @@
         type: SurgeryBui
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface
+      # Sunrise-Start
       enum.VampireMutationUiKey.Key:
         type: VampireMutationBoundUserInterface
+      enum.SummonCultistUiKey.Key:
+        type: SummonCultistListWindowBUI
+      enum.CultSpellProviderUiKey.Key:
+        type: SpellSelectorBUI
+      # Sunrise-End
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -263,6 +269,7 @@
   abstract: true
   components:
   # Sunrise-Start
+  - type: DarkenedVision
   - type: CanEscapeInventory
   - type: Mood
   - type: CritHeartbeat
@@ -312,7 +319,7 @@
     sweatHeatRegulation: 2000
     shiveringHeatRegulation: 2000
     normalBodyTemperature: 310.15
-    thermalRegulationTemperatureThreshold: 25
+    thermalRegulationTemperatureThreshold: 2
   - type: Perishable
   - type: Butcherable
     butcheringType: Spike # TODO human.

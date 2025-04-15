@@ -436,6 +436,7 @@
   - type: Access
     groups:
     - AllAccess
+    - Silicon
   - type: Eye
     drawFov: false
   - type: Examiner
@@ -443,6 +444,7 @@
   - type: Speech
     speechVerb: Robotic
     speechSounds: Borg
+  - type: ShowMindShieldIcons
   - type: Tag
     tags:
     - HideContextMenu
@@ -618,7 +620,7 @@
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellHigh
   - type: RandomMetadata
-    nameSegments: [names_borg]
+    nameSegments: [NamesBorg]
 
 - type: entity
   id: PlayerBorgDerelictGhostRole
