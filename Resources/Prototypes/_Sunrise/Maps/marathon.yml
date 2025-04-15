@@ -1,6 +1,6 @@
 - type: gameMap
   id: SunriseMarathon
-  mapName: 'Marathon Station'
+  mapName: 'Marathon'
   mapPath: /Maps/_Sunrise/Station/marathon.yml
   maxRandomOffset: 0
   randomRotation: false
@@ -68,6 +68,7 @@
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 3, 3 ]
+            MailCarrier: [ 1, 2 ]
             #civilian
             Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]
@@ -119,7 +120,7 @@
           - Cyborgs
           - Testing
           - Anomaly
-          - Replenishment
+          #- Replenishment
           - IntelWeapons
           - Reports
           - Reconnaissance
@@ -129,4 +130,5 @@
           - CleaningUp
           - HumanitarianAid
           - PersonnelRecovery
+          - CrewEducation
           #- VirusFlesh

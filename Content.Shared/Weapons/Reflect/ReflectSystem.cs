@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Content.Shared._Sunrise.Events;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;
 using Content.Shared.Audio;
@@ -64,7 +65,7 @@ public sealed class ReflectSystem : EntitySystem
 
         foreach (var ent in _inventorySystem.GetHandOrInventoryEntities(uid, SlotFlags.All & ~SlotFlags.POCKET))
         {
-            if (!TryReflectHitscan(uid, ent, args.Shooter, args.SourceItem, args.Direction, args.Reflective, out var dir)) // Sunrise-Edit
+            if (!TryReflectHitscan(uid, ent, args.Shooter, args.SourceItem, args.Direction, args.Reflective, out var dir))
                 continue;
 
             args.Direction = dir.Value;
@@ -97,9 +98,9 @@ public sealed class ReflectSystem : EntitySystem
     private bool TryReflectProjectile(EntityUid user, EntityUid reflector, EntityUid projectile, ProjectileComponent? projectileComp = null, ReflectComponent? reflect = null)
     {
         if (!Resolve(reflector, ref reflect, false) ||
-            !_toggle.IsActivated(reflector) ||
             !TryComp<ReflectiveComponent>(projectile, out var reflective) ||
             (reflect.Reflects & reflective.Reflective) == 0x0 ||
+            !_toggle.IsActivated(reflector) ||
             !_random.Prob(reflect.ReflectProb) ||
             !TryComp<PhysicsComponent>(projectile, out var physics))
         {
@@ -149,6 +150,9 @@ public sealed class ReflectSystem : EntitySystem
             projectileComp.Shooter = user;
             projectileComp.Weapon = user;
             Dirty(projectile, projectileComp);
+
+            var reflectedEv = new ReflectedEvent(projectileComp.Shooter, projectileComp.Weapon.Value, projectileComp.Damage, reflective.Reflective);
+            RaiseLocalEvent(reflector, reflectedEv);
         }
         else
         {
@@ -160,12 +164,12 @@ public sealed class ReflectSystem : EntitySystem
 
     private void OnReflectHitscan(EntityUid uid, ReflectComponent component, ref HitScanReflectAttemptEvent args)
     {
-        if (args.Reflected) // Sunrise-Edit
+        if (args.Reflected)
         {
             return;
         }
 
-        if (TryReflectHitscan(uid, uid, args.Shooter, args.SourceItem, args.Direction, args.Reflective, out var dir)) // Sunrise-Edit
+        if (TryReflectHitscan(uid, uid, args.Shooter, args.SourceItem, args.Direction, args.Reflective, out var dir))
         {
             args.Direction = dir.Value;
             args.Reflected = true;
@@ -178,19 +182,13 @@ public sealed class ReflectSystem : EntitySystem
         EntityUid? shooter,
         EntityUid shotSource,
         Vector2 direction,
-        ReflectType reflective, // Sunrise-Edit
+        ReflectType hitscanReflectType,
         [NotNullWhen(true)] out Vector2? newDirection)
     {
         if (!TryComp<ReflectComponent>(reflector, out var reflect) ||
+            (reflect.Reflects & hitscanReflectType) == 0x0 ||
             !_toggle.IsActivated(reflector) ||
             !_random.Prob(reflect.ReflectProb))
-        {
-            newDirection = null;
-            return false;
-        }
-
-        // Sunrise-Start
-        if ((reflect.Reflects & reflective) == 0x0)
         {
             newDirection = null;
             return false;

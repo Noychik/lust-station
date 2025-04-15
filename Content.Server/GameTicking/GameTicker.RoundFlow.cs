@@ -26,7 +26,6 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Content.Server.StatsBoard;
-using Content.Shared._Sunrise.StatsBoard;
 
 namespace Content.Server.GameTicking
 {
@@ -44,6 +43,16 @@ namespace Content.Server.GameTicking
         private static readonly Gauge RoundLengthMetric = Metrics.CreateGauge(
             "ss14_round_length",
             "Round length in seconds.");
+
+        // Sunrise-Start
+        private static readonly Counter MapPlayedMetric = Metrics.CreateCounter(
+            "ss14_map_played_total",
+            "Number of times each map has been played.",
+            new CounterConfiguration
+            {
+                LabelNames = ["map_id"]
+            });
+        // Sunrise-End
 
 #if EXCEPTION_TOLERANCE
         [ViewVariables]
@@ -135,6 +144,10 @@ namespace Content.Server.GameTicking
 
             // Let game rules dictate what maps we should load.
             RaiseLocalEvent(new LoadingMapsEvent(maps));
+            // Sunrise-Start
+            MapPlayedMetric.WithLabels(mainStationMap.ID).Inc();
+            _gameMapManager.AddExcludedMap(mainStationMap.ID);
+            // Sunrise-End
 
             if (maps.Count == 0)
             {
@@ -200,7 +213,7 @@ namespace Content.Server.GameTicking
 
             if (ev.GameMap.IsGrid)
             {
-                var mapUid = _map.CreateMap(out mapId);
+                var mapUid = _map.CreateMap(out mapId, runMapInit: options?.InitializeMaps ?? false);
                 if (!_loader.TryLoadGrid(mapId,
                         ev.GameMap.MapPath,
                         out var grid,
@@ -562,7 +575,7 @@ namespace Content.Server.GameTicking
 
                 if (TryGetEntity(mind.OriginalOwnedEntity, out var entity) && pvsOverride)
                 {
-                    _pvsOverride.AddGlobalOverride(GetNetEntity(entity.Value), recursive: true);
+                    _pvsOverride.AddGlobalOverride(entity.Value);
                 }
 
                 var roles = _roles.MindGetAllRoleInfo(mindId);
