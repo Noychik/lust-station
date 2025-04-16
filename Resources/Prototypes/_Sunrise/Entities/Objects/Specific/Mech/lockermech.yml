@@ -7,12 +7,12 @@
   - type: Sprite
     drawdepth: Mobs
     noRot: true
-    sprite: /Textures/_Lust/Objects/Specific/Mech/lockermech.rsi
+    sprite: /Textures/_Sunrise/Objects/Specific/Mech/lockermech.rsi
     scale: 1.08, 1.08
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: lockermech
-      sprite: /Textures/_Lust/Objects/Specific/Mech/lockermech.rsi
+      sprite: /Textures/_Sunrise/Objects/Specific/Mech/lockermech.rsi
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/Mecha/sound_mecha_powerloader_step.ogg

@@ -12,7 +12,7 @@
     statePrefix: state
   - type: Sprite
     noRot: true
-    sprite: /Textures/_Lust/Objects/Specific/Mech/lockermech_construction.rsi
+    sprite: /Textures/_Sunrise/Objects/Specific/Mech/lockermech_construction.rsi
     state: state0
   - type: Construction
     graph: LockerMechConstruction
@@ -217,20 +217,7 @@
   targetNode: lockermech
   category: construction-category-misc
   icon:
-    sprite: /Textures/_Lust/Objects/Specific/Mech/lockermech.rsi
+    sprite: /Textures/_Sunrise/Objects/Specific/Mech/lockermech.rsi
     state: lockermech
   objectType: Structure
 
-# рецепт шасси шкафомеха
-# - type: construction
-#   id: LockerMechChassis
-#   name: Корпус шкафомеха
-#   description: Незавершенная конструкция шкафомеха.
-#   graph: LockerMechConstruction
-#   startNode: start
-#   targetNode: chassis
-#   category: construction-category-machines
-#   icon:
-#     sprite: /Textures/_Lust/Objects/Specific/Mech/lockermech_construction.rsi
-#     state: state0
-#   objectType: Structure

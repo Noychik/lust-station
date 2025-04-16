@@ -36,6 +36,7 @@
     startingCharge: 1800
   - type: EmpImmune
 
+#самодельная, by Noychik
 - type: entity
   name: makeshift power cell
   description: A makeshift power cell. It's not very good, but it's better than nothing.
