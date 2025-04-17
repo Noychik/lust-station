@@ -1,6 +1,6 @@
 - type: entity
   id: MechLocker
-  parent: [ BaseMech, IndustrialMech, BaseCargoContraband ]
+  parent: [ BaseMech, IndustrialMech ]
   name: LockerMech
   description: Медленный, но герметичный мех. Собран из мусора.
   components:

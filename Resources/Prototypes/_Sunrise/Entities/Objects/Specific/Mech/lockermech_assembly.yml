@@ -19,7 +19,7 @@
     node: chassis
     defaultTarget: lockermech
 
-# Единый граф для всего процесса
+
 - type: constructionGraph
   id: LockerMechConstruction
   name: Шкафомех
