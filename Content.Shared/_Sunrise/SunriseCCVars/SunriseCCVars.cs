@@ -1,9 +1,9 @@
-﻿using Robust.Shared.Configuration;
+﻿using Robust.Shared;
+using Robust.Shared.Configuration;
 
 namespace Content.Shared._Sunrise.SunriseCCVars;
 
-[CVarDefs]
-public sealed class SunriseCCVars
+public sealed partial class SunriseCCVars : CVars
 {
     /**
      * TTS (Text-To-Speech)
@@ -31,7 +31,7 @@ public sealed class SunriseCCVars
     /// Amount of seconds before timeout for API
     /// </summary>
     public static readonly CVarDef<int> TTSApiTimeout =
-        CVarDef.Create("tts.api_timeout", 5, CVar.SERVERONLY | CVar.ARCHIVE);
+        CVarDef.Create("tts.api_timeout", 10, CVar.SERVERONLY | CVar.ARCHIVE);
 
     /// <summary>
     /// Option to disable TTS events for client

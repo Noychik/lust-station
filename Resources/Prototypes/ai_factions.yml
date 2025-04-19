@@ -1,4 +1,16 @@
 - type: npcFaction
+  id: Dragon
+  hostile:
+  - NanoTrasen
+  - Syndicate
+  - Xeno
+  - PetsNT
+  - Zombie
+  - Revolutionary
+  - AllHostile
+  - Wizard
+
+- type: npcFaction
   id: NanoTrasen
   hostile:
   - SimpleHostile
@@ -48,6 +60,8 @@
   - PetsNT
   - Zombie
   - Revolutionary
+  #- Dragon
+  - Xeno
   - AllHostile
   - Wizard
   # Sunrise Edit
